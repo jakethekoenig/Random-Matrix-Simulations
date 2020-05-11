@@ -11,3 +11,4 @@ RMT.m2 has code that produces matrices. The only code in the directory relevant 
 TODO: Make the code general for a larger list of a_i
 TODO: Do this in python with Sage instead.
 TODO: Circulent doesn't work if b is too large relative to n. In the case of a,b = 1,3 need n>=7. Fix this.
+Can see critical groups of C_n(1,3) here: https://docs.google.com/spreadsheets/d/1ZQPNsrycna9DFDRlShPMptTEA7fZ01A2yLiyseWeNQ4/edit?usp=sharing
