@@ -23,6 +23,8 @@ circulent = (a,b,n) -> 4 * id_(ZZ^n) - perm2matrix(cycleperm (n,a)) - perm2matri
 -- of each edge being included.
 columncount = (M) -> diagonalMatrix (matrix({(for i from 1 to (rank target M) list 1)}) * M)
 bipartite = (n,m,q) -> (A=iid(n,m,()->bern(q)); (columncount(transpose(A))|A)||(transpose(A)|columncount(A)))
+reduce = (M) -> submatrix'(M, {1}, {1})
+reducedbipartite = (n,m,q) -> reduce(bipartite(n,m,q))
 
 -- A matrix with zeros on the diagonal and elements distributed by r on the "k wide" diagonal.
 neardiag = (n,k,r) -> matrix(for i from 1 to n list (for j from 1 to n list (if abs(i-j)<k then r() else 0)))
