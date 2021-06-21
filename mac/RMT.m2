@@ -21,8 +21,9 @@ circulent = (a,b,n) -> 4 * id_(ZZ^n) - perm2matrix(cycleperm (n,a)) - perm2matri
 
 -- Returns the Laplacian of a random bipartite graph with |L| = n, |R| = m and probability q 
 -- of each edge being included.
-columncount = (M) -> diagonalMatrix (matrix({(for i from 1 to (rank target M) list 1)}) * M)
-bipartite = (n,m,q) -> (A=iid(n,m,()->bern(q)); (columncount(transpose(A))|A)||(transpose(A)|columncount(A)))
+columncount = (M) -> diagonalMatrix (matrix({(for i from 1 to (rank target M) list -1)}) * M)
+bipartite = (n,m,q) -> (A=iid(n,m,()->-bern(q)); submatrix'((columncount(transpose(A))|A)||(transpose(A)|columncount(A)),{1},{1}))
+di_bipartite = (n,m,q) -> (A=iid(n,m,()->-bern(q)); B=iid(m,n,()->-bern(q)); submatrix'((columncount(transpose(A))|A)||(transpose(B)|columncount(B)),{1},{1}))
 
 -- A matrix with zeros on the diagonal and elements distributed by r on the "k wide" diagonal.
 neardiag = (n,k,r) -> matrix(for i from 1 to n list (for j from 1 to n list (if abs(i-j)<k then r() else 0)))

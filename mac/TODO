@@ -4,7 +4,10 @@ Koplewitz
 Determine the corank distribution of bipartite graphs alpha=1, for a variety of n and p.
 Goal: estimate O(1) terms. Show their independent of p. See more fine statistics about the distribution.
 Estimate Koplewit'z numbers for bipartite graph sandpile being cyclic when alpha>1/2 and alpha=1/2
+Above computations with digraphs.
 
 Code to produce Erdos-Renyi Laplacians.
 
 Test conjectures in "Two-vertex generators of Jacobians of graphs"
+
+Atal's coprime graphs.
